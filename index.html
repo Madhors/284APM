@@ -5,6 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <script>
+      (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+        'cwr',
+        '55b2d24e-5497-4799-8972-b23938dd8831',
+        '1.0.0',
+        'ap-northeast-1',
+        'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
+        {
+          sessionSampleRate: 1,
+          identityPoolId: "ap-northeast-1:e807a598-3cb0-464f-b1d5-0f596f063abe",
+          endpoint: "https://dataplane.rum.ap-northeast-1.amazonaws.com",
+          telemetries: ["performance","errors","http"],
+          allowCookies: true,
+          enableXRay: false
+        }
+      );
+    </script>
   </head>
   <body>
     <div id="root"></div>
