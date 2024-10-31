@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-import { AwsRum, AwsRumConfig } from 'aws-rum-web';
 
 const client = generateClient<Schema>();
 
@@ -17,30 +16,6 @@ function App() {
   function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
   }
-  
-  try {
-  const config: AwsRumConfig = {
-    sessionSampleRate: 1,
-    identityPoolId: "ap-northeast-1:e807a598-3cb0-464f-b1d5-0f596f063abe",
-    endpoint: "https://dataplane.rum.ap-northeast-1.amazonaws.com",
-    telemetries: ["performance","errors","http"],
-    allowCookies: true,
-    enableXRay: false
-  };
-
-  const APPLICATION_ID: string = '55b2d24e-5497-4799-8972-b23938dd8831';
-  const APPLICATION_VERSION: string = '1.0.0';
-  const APPLICATION_REGION: string = 'ap-northeast-1';
-
-  const awsRum: AwsRum = new AwsRum(
-    APPLICATION_ID,
-    APPLICATION_VERSION,
-    APPLICATION_REGION,
-    config
-  );
-} catch (error) {
-  // Ignore errors thrown during CloudWatch RUM web client initialization
-}
 
   return (
     <main>
